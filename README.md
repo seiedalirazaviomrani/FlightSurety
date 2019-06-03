@@ -73,16 +73,20 @@ Refresh is also needed after switching accounts in Metamask.**
 
 ## API
 The server runs by default on port 3000.  
+
 - **/flights**  
 Get all registered flights.
-![Screenshot tests](./screenshots/12.png)
 Note: the front-end client get the registered flights from this end point.
+![Screenshot tests](./screenshots/12.png)
+
 - **/flight/ref.destination.landing_timestamp**  
 Get one flight
 ![Screenshot tests](./screenshots/13.png)
+
 - **/response/ref.destination.landing_timestamp**  
 Get a response object (isOpen and requester attributes)
 ![Screenshot tests](./screenshots/14.png)
+
 ## Resources
 
 - [Truffle](https://www.truffleframework.com/): smart contracts and DAPP development framework.
