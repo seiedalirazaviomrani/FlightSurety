@@ -2,45 +2,6 @@
 FlightSurety is an Ethereum DApp to manage flight insurances.
 ![Screenshot client](./screenshots/front-end.png)
 
-## Actors
-### Airlines
-- Airlines can register other airlines.
-- Airline can register flights **respecting following conditions**
-(otherwise the transaction will be rejected):
-  - Take Off date must be in the future.
-  - Landing date must be later than take Off date.
-
-- Airlines can withdraw amount credited to them following flight ticket purchases
-by passengers.
-- Airlines form a consortium governed according to the following rules:
-  - Providing a funding of at least 10 ETH is required before registering flights
-  or airlines.
-  - Starting from a number of 4 airlines registered, consensus of 50% is required
-  (votes of half of the registered airlines) for new airline registration
-  - Consensus is not required to register flights
-
-### Passengers
-- Passengers can book flights that have been registered by airlines.  
-- Passengers can subscribe insurance for an amount of up to 1 ETH.  
-- Insured passengers get reimbursed 1.5 x their insurance amount if a flight is
-delay due to airline's responsibility.  
-This credited amount is not transferred automatically but has to be withdrawn by
-insurees.
-
-### Oracles
-Oracles inform the smart contract whether the status of a flight.
-Flight status is requested by submitting a corresponding request to the oracles.  
-As soon as 3 oracles provides concurring opinion, the flight status is updated
-accordingly.  
-**Oracles are simulated**: they generate a random status code on the server side.
-
-## Contract architecture
-Data (flights, passengers, insurance amounts, airlines...) has been separated from application logic,
-resulting in two separated contracts: FlightSuretyApp and FlightSuretyData.  
-This offers the following benefits:
-- a new 'App' contract can be deployed in the case of business rule changes (different oracle registration fee, funding fee, etc..) while the state of the data contract is kept.
-- ensures modularity
-
 ## Getting Started
 1.  Clone/download repository
 ```
